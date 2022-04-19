@@ -1,17 +1,17 @@
 import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { toggle } from "../redux/slices/darkmode";
-import { RootState } from "../redux/store";
+import { darkmodeToggle } from "../redux/slices/darkmode";
+
 
 function Navigation() {
   const darkmode = useAppSelector(state => state.darkmode)
   const dispatch = useAppDispatch();
   const onDarkmodeBtnClick = () =>{
-    dispatch(toggle())
+    dispatch(darkmodeToggle())
   }
 
   return (
-    <div>
+    <div className='navi'>
       <main>
         <ul>
           <li>
