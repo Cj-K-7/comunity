@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function Router() {
+function Navigation() {
   return (
     <div>
         <ul>
@@ -24,4 +24,4 @@ function Router() {
   );
 }
 
-export default Router;
+export default Navigation;
