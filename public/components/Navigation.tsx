@@ -1,40 +1,62 @@
 import Link from "next/link";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { darkmodeToggle } from "../redux/slices/darkmode";
+import { Dispatch, SetStateAction } from "react";
+import styled from "styled-components";
 
+const NaviBar = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
-function Navigation() {
-  const darkmode = useAppSelector(state => state.darkmode)
-  const dispatch = useAppDispatch();
-  const onDarkmodeBtnClick = () =>{
-    dispatch(darkmodeToggle())
+const NaviMenus = styled.section`
+  & ul {
+    display: flex;
   }
+  & ul li {
+    margin: 10px;
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+`;
+
+const UtillMenus = styled.section``;
+
+interface INaviProps {
+  setDark: Dispatch<SetStateAction<boolean>>;
+}
+
+function Navigation({ setDark }: INaviProps) {
+  const onDarkmodeBtnClick = () => {
+    setDark((Bool) => !Bool);
+  };
 
   return (
-    <div className='navi'>
-      <main>
-        <ul>
-          <li>
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/dashboard">
-              <a>Dashboard</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/community">
-              <a>Community</a>
-            </Link>
-          </li>
-        </ul>
-      </main>
-      <section>
-        <button onClick={onDarkmodeBtnClick}>Dark mode</button>
-      </section>
-    </div>
+    <>
+      <NaviBar>
+        <NaviMenus>
+          <ul>
+            <li>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/dashboard">
+                <a>Dashboard</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/community">
+                <a>Community</a>
+              </Link>
+            </li>
+          </ul>
+        </NaviMenus>
+        <UtillMenus>
+          <button onClick={()=>{}}>Log In/Out</button>
+          <button onClick={onDarkmodeBtnClick}>Dark mode</button>
+        </UtillMenus>
+      </NaviBar>
+    </>
   );
 }
 

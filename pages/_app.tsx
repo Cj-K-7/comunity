@@ -5,15 +5,17 @@ import { Provider } from "react-redux";
 import store from "../public/redux/store";
 import GlobalStyle from "../styles/GlobalStyle";
 import { ThemeProvider } from "styled-components";
-import { lightTheme } from "../styles/theme";
+import { darkTheme, lightTheme } from "../styles/theme";
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [dark, setDark] = useState(false);
   return (
     <>
       <Provider store={store}>
-        <ThemeProvider theme={lightTheme}>
+        <ThemeProvider theme={dark ? darkTheme : lightTheme}>
           <GlobalStyle />
-          <Navigation />
+          <Navigation setDark={setDark} />
           <Component {...pageProps} />
         </ThemeProvider>
       </Provider>
