@@ -39,8 +39,8 @@ const DashboardHome: NextPage = () => {
         <Section>
           <SectionTitle>most 5</SectionTitle>
           <ol>
-            <li>first</li>
-            <li>second</li>
+            <li>circle graph</li>
+            <li>react</li>
             <li>third</li>
             <li>fourth</li>
             <li>fifth</li>

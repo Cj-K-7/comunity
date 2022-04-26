@@ -10,6 +10,7 @@ const NaviBar = styled.div`
 const NaviMenus = styled.section`
   & ul {
     display: flex;
+    flex-direction: row;
   }
   & ul li {
     margin: 10px;
@@ -18,7 +19,9 @@ const NaviMenus = styled.section`
   }
 `;
 
-const UtillMenus = styled.section``;
+const UtillMenus = styled.section`
+  margin : 5px;
+`;
 
 interface INaviProps {
   setDark: Dispatch<SetStateAction<boolean>>;
