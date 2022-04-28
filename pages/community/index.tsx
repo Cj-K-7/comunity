@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 
 const CommunityHome: NextPage = () => {
   return (
@@ -11,13 +12,20 @@ const CommunityHome: NextPage = () => {
       </Head>
       <main>
         <section>
-          <label>
+          <label>Search
             <input type="text" list="list" />
             <datalist id="list"></datalist>
+            <button>찾기</button>
           </label>
-          <button>POST</button>
+          <Link href='/community/post'>
+          <button>글쓰기</button>
+          </Link>
         </section>
-        <section></section>
+        <section>
+          <ul>
+            <li><Link href='/community/:id'><a>post title</a></Link></li>
+          </ul>
+        </section>
       </main>
     </>
   );

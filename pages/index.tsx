@@ -1,11 +1,7 @@
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import { useAppSelector } from "../public/redux/hooks";
-import { darkTheme, lightTheme } from "../styles/theme";
 
 const Home: NextPage = (resul) => {
-  const darkmode = useAppSelector((state) => state.darkmode);
   return (
     <>
       <Head>
