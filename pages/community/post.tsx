@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 interface IBasicForm {
-  [name: string]: string;
+  [name: string]: string | number;
 }
 
 const Post: NextPage = () => {
@@ -13,6 +13,8 @@ const Post: NextPage = () => {
     main: "",
   });
 
+
+  //dynamic onChnage for ever input / select
   const onChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -28,6 +30,7 @@ const Post: NextPage = () => {
   const onPostSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(posting);
+    //fetch POST
   };
 
   return (

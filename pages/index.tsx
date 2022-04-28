@@ -1,7 +1,13 @@
-import type { GetServerSideProps, NextPage } from "next";
+import type {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+  NextPage,
+} from "next";
 import Head from "next/head";
 
-const Home: NextPage = (resul) => {
+const Home: NextPage = ({}: InferGetServerSidePropsType<
+  typeof getServerSideProps
+>) => {
   return (
     <>
       <Head>
